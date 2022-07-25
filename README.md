@@ -56,3 +56,6 @@
     2. define reducer
     3. create store provider
     4. implement add to cart button click hnadler
+13. Complete Add To cart
+    1. check exist item in the cart
+    2. check count in stock in backend
