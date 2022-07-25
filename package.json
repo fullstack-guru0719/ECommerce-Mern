@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "react-helmet-async": "^1.3.0"
+  }
+}
