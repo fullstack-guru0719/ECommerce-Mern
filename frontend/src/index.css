@@ -12,6 +12,10 @@ body {
 main {
   flex: 1;
 }
+.btn-primary {
+  background-color: #f0c040;
+}
+
 .products {
   display: flex;
   flex-wrap: wrap;
@@ -39,4 +43,8 @@ main {
 }
 .img-thumbnail {
   height: 80px;
+}
+
+.small-container {
+  max-width: 600px;
 }
