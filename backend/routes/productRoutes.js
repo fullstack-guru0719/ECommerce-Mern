@@ -8,8 +8,8 @@ productRouter.get('/', async (req, res) => {
   res.send(products);
 });
 
-productRouter.get('/api/products/slug/:slug', async (req, res) => {
-  const product = await Product.findOne({ slug: eq.params.slug });
+productRouter.get('/slug/:slug', async (req, res) => {
+  const product = await Product.findOne({ slug: req.params.slug });
   if (product) {
     res.send(product);
   } else {
