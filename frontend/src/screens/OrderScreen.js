@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useReducer } from 'react';
+import { PayPalButtons, usePayPalScriptReducer } from '@paypal/react-paypal-js';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { Link, useNavigate, useParams } from 'react-router-dom';
@@ -55,6 +56,13 @@ export default function OrderScreen() {
     }
     if (!order._id || (order._id && order._id !== orderId)) {
       fetchOrder();
+    } else {
+      const loadPayPalScript = async () => {
+        const { data: clientId } = await axios.get('/api/keys/paypal', {
+          headers: { authorization: `${userInfo.token}` },
+        });
+      };
+      loadPayPalScript();
     }
   }, [order, userInfo, orderId, navigate]);
 
